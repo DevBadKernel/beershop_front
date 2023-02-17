@@ -1,0 +1,58 @@
+<body>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+        integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        rel="stylesheet"/>
+
+    <div class="home-container">
+        <div id="logo" class="contianer-fluid animate__animated animate__rubberBand mt-2">
+            <app-logo></app-logo>
+
+        </div>
+    </div>
+    <div class="news">
+        <div>
+            <h1 class="subheader">Elige tus cervezas favoritas</h1>
+        </div>
+        <div class="dropdown">
+            <button id="butttonTipos">Tipos de cervezas</button>
+            <div class="dropdown-content">
+                <a (click)="getProducts()">Todas</a>
+                <a (click)="getCategory('Rubia')">Rubia</a>
+                <a (click)="getCategory('Tostada')">Tostada</a>
+                <a (click)="getCategory('Negra')">Negra</a>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="imagenTipo mx-auto" *ngFor="let novelty of novelty_products" [routerLink]="['/product', novelty._id]">
+            <img class="imagen" src="{{novelty.photo1}}">
+        </div>
+    </div>
+    <div class="separador"></div>
+    <div class="columnas">
+        <div class="sugerencias" *ngFor="let product of products;let i = index">
+            <div class="tarjeta" [routerLink]="['/product', product._id]">
+                <div class="ribbon" *ngIf="product.novelty"><span>Novedad</span></div>
+                <div class="imageCenter">
+                    <img id="imagenSugerencia"
+                    src="{{product.photo1}}"
+                    class="rounded" alt="...">                
+                </div>
+                <div class="details" >
+                    <h5 class="name">{{product.name}}</h5>
+                    <p class="description">{{product.description}}</p>
+                    <div class="priceGraduation">
+                        <p class="price">Precio: <strong>{{product.price}}€</strong> </p>
+                        <p class="graduation">Graduación: <strong>{{product.graduation}}°</strong> </p>
+                    </div>
+                    <div class="scoreZone">
+                        <small class="score" ><i *ngFor="let in of puntuacion(product.score)" class="bi bi-star-fill"></i></small>
+                        <p class="zone">Origen: <strong>{{product.zone}}</strong> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+</body>

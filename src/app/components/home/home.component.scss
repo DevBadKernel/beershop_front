@@ -1,0 +1,62 @@
+.general{
+  padding-left: 30%;
+  padding-right: 30%;
+  text-align: center;
+}
+
+.header{
+  color: #CD104D;
+  font-weight: 600;
+  font-size: 50px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.subheader{
+  background-color: #FD841F;
+  border-color: #E14D2A;
+  border-style: solid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.newProducts{
+display: flex;
+justify-content: space-around;
+width: 100%;
+}
+
+.newProducts a{
+  justify-content: space-between;
+  border-style: solid;
+  padding: 20px;
+}
+
+.newProducts img{
+  border-style: solid;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
+}
+
+.headerMarcas{
+  text-align: center;
+}
+
+.brands{
+  height: 140px;
+  width: 190px;
+  overflow: hidden;
+}
+
+.image{
+  object-fit: cover;
+  width: 190px;
+  height: 140px;
+  padding: 8px;
+}
+
+
+
